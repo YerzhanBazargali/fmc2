@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1619602121858394"
+     crossorigin="anonymous"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-23YP55ZMRK"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-23YP55ZMRK');
+</script>
+    <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title data-translate="heading">Қорытынды баға калкуляторы / Калькулятор итоговых оценок</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta property="og:title" content="" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="500" />
+  <meta property="og:image:height" content="300" />
+  <meta property="twitter:description" content="" />
+  <link rel="image_src" href="" />
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:100,200,300,400,500,600,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=cyrillic" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+	
+  <style>
+    /* Add some style to the website */
+    html, body {
+        scroll-behavior: smooth;
+        
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+      }
+    @media (max-width: 600px) {
+        width: 100%;
+    }
+    html {
+          width: 100%;
+      }
+    body {
+        width: 100%;
+        height: 100%;
+        font-family: sans-serif;
+        font-size: 16px;
+        padding-top: 10px;
+    }
+    input {
+	    font-size: 22px; 
+	    color: DarkBlue;
+	    font-weight: 500;
+	    text-align: center;
+	    border-radius: 7px;
+	    padding: 1px;
+    }
+    input::placeholder {
+	    font-size: 14px;
+	    font-weight: normal;
+	    color: DarkSlateGrey;
+	    opacity: 0.5;
+    }
+    .bg {
+        width: 100%;
+    }
+    .marks {
+	    font-size: 24px;
+    }
+    .tb{
+	    background-image: url("note.jpg");
+    }
+    .fulls{
+        width: 100%;
+    }
+
+
+    #line{
+        color: white;
+    }
+    .input-text{
+	    width: 115px;
+	    
+    }
+    .final-table{
+        border-radius: 10px;
+        text-align: center;
+        
+    }
+    .rowName::after {
+        content: attr(data-title);
+    }
+
+    .rowName:hover::after { 
+        content: attr(data-title); 
+    }
+    th{
+	 padding: 5px;   
+    }
+    #FO, #SO, #sochPercent, #summary, #mark {
+	    padding: 5px;
+	    font-size: 20px;
+    }
+    #gr{
+	    background: palegreen;
+	    padding: 2px 10px;
+	    border-radius: 7px;
+    }
+    #or{
+	    background: gold;
+	    padding: 2px 10px;
+	    border-radius: 7px;
+    }
+    #rd{
+	    background: #ff9e81;
+	    padding: 2px 10px;
+	    border-radius: 7px;
+	    
+    }
+    #zg{
+	    background: #ABCDEF;
+	    padding: 2px 10px;
+	    border-radius: 7px;
+    }
+    #zs{
+	    background: #C8A2C8;
+	    padding: 2px 10px;
+	    border-radius: 7px;
+    }
+    #heading{
+	    padding-top:10px;
+    }
+  .io{
+  background:#d3d3d3;
+  border-radius: 7px;
+  padding:5px;
+  text-align:center;
+  font-family: 'TAHOMA';
+}
+.low {
+    background-color: #ff9e81;
+    color: black;
+    border-radius: 7px;
+    padding:5px;
+    text-align:center;
+    font-family: 'TAHOMA';
+}
+
+.medium {
+    background-color: gold;
+    color: black;
+    border-radius: 7px;
+    padding:5px;
+    text-align:center;
+    font-family: 'TAHOMA';
+}
+.hm{
+  background-color: Aquamarine;
+    color: black;
+}
+.high {
+    background-color: palegreen;
+    color:  #123524;
+    border-radius: 7px;
+    padding:5px;
+    text-align:center;
+    font-family: 'TAHOMA';
+}
+  </style>
+</head>
+<body align="center">
+  <div class="bg">
+  <div align="center">
+      <h2 id="heading" data-translate="heading">Калькулятор итоговых оценок</h2>
+    <table class="marks">
+        <tbody>
+            <tr><td colspan="2" id = "gr" data-translate="m10">Десяток (10):</td><td><input class="input-text" id="10" type="number" min="1" max="100" value="" placeholder="Кол-во" ></td></tr>
+            <tr><td colspan="2" id = "gr" data-translate="m9">Девяток (9):</td><td><input class="input-text" id="9" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+            <tr><td colspan="2" id = "gr" data-translate="m8">Восьмерок (8):</td><td><input class="input-text" id="8" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+            <tr><td colspan="2" id = "or" data-translate="m7">Семерок (7):</td><td><input class="input-text" id="7" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+            <tr><td colspan="2" id = "or" data-translate="m6">Шестёрок (6):</td><td><input class="input-text" id="6" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+	    <tr><td colspan="2" id = "or" data-translate="m5">Пятёрок (5):</td><td><input class="input-text" id="5" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+	    <tr><td colspan="2" id = "rd" data-translate="m4">Четвёрок (4):</td><td><input class="input-text" id="4" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+	    <tr><td colspan="2" id = "rd" data-translate="m3">Троек (3):</td><td><input class="input-text" id="3" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>		    
+	    <tr><td colspan="2" id = "rd" data-translate="m2">Двоек (2):</td><td><input class="input-text" id="2" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+            <tr><td colspan="2" id = "rd" data-translate="m1">Единиц (1):</td><td><input class="input-text" id="1" type="number" min="1" max="100" value="" placeholder="Кол-во"></td></tr>
+			<tr id="line" bordercolor="red"><td id="line" colspan="2" >0</td></tr>
+            
+            <tr>
+                <td class="rowName" title="Суммативное оценивание за раздел" id="zg" data-translate="sor1">СОР1</td>
+                <td><input class="SO" id="max-sor-1" size="5px" type="number" min="1" max="100" value="" placeholder="Макс" disabled></td>
+                <td><input class="input-text" id="sor-1-val" type="number" min="1" max="100" value="" placeholder="Кол-во баллов" disabled></td></tr>
+            <tr>
+                <td id="zg" data-translate="sor2">СОР2</td>
+                <td><input class="SO" id="max-sor-2" size="5px" type="number" min="1" max="100" value="" placeholder="Макс" disabled></td>
+                <td><input class="input-text" id="sor-2-val" type="number" min="1" max="100" value="" placeholder="Кол-во баллов" disabled></td></tr>
+            <tr>
+                <td id="zg" data-translate="sor3">СОР3</td>
+                <td><input class="SO" id="max-sor-3" size="5px" type="number" min="1" max="100" value="" placeholder="Макс" disabled></td>
+                <td><input class="input-text" id="sor-3-val" type="number" min="1" max="100" value="" placeholder="Кол-во баллов" disabled></td></tr>
+            <tr>
+                <td id="zg" data-translate="sor4">СОР4</td>
+                <td><input class="SO" id="max-sor-4" size="5px" type="number" min="1" max="100" value="" placeholder="Макс" disabled></td>
+                <td><input class="input-text" id="sor-4-val" type="number" min="1" max="100" value="" placeholder="Кол-во баллов" disabled></td></tr>
+            <tr>
+                <td id="zs" data-translate="so4">СОЧ</td>
+                <td><input class="SO" id="max-soch" size="5px" type="number" min="1" max="100" value="" placeholder="Макс" disabled></td>
+                <td><input class="input-text" id="soch-val" type="number" min="1" max="100" value="" placeholder="Кол-во баллов" disabled=""></td></tr>
+			</tbody></table>
+    </div>
+    
+   <hr width=90%>
+    
+    <div align="center" class="final-table" >
+        <table align="center">
+            <tbody>
+                <tr>
+            <th class="io" data-translate="FOp">% ФО</th>
+			<th class="io" data-translate="SORp">% СОР</th>
+			<th class="io" data-translate="pso4">% СОЧ</th>
+			<th class="io" data-translate="sum">% СУММА</th>
+			<th class="io" data-translate="mark">ОЦЕНКА</th>
+		</tr>
+                <tr>
+            <td class="io" id="FO">0</td>
+			<td class="io" id="SO">0</td>
+			<td class="io" id="sochPercent">0</td>
+			<td class="io" id="summary">0</td>
+			<td class="io" id="mark">0</td>
+		</tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <script>
+    // Add some interactivity to the website
+    var input = document.body.children[0];
+      
+    input.oninput = function()  {inputActivator(); ResultUpdate();finalMarkDecortor();}
+
+    //////////////////////////////
+    function checkFoInputs() {
+        let elements = document.querySelectorAll('input');
+        var result = false;
+        for (let elem of elements) {
+	    if (elem.value <= 0 && elem.value != ""){elem.value = Math.abs(elem.value);};
+            if (elem.value >= 1 && elem.value <= 100 && elem.value != ""){result = true;};
+	    
+        }
+        if (result == false){
+            for (let elem of elements){elem.value = "";}
+        }
+        
+
+        return result;
+    }
+	///////////////////////////////////////
+	function finalMarkDecortor(){
+    const FO = parseFloat(document.getElementById('FO').textContent);
+    const SO = parseFloat(document.getElementById('SO').textContent);
+    const sochPercent = parseFloat(document.getElementById('sochPercent').textContent);
+    const summary = parseFloat(document.getElementById('summary').textContent);
+    const mark = parseInt(document.getElementById('mark').textContent);
+
+    function applyColorClass(element, value, coef) {
+
+	    if (value == 0 || value == '') { element.className = 'io'; } 
+        else if (value > 0 && value < 39.45 / coef) { element.className = 'low'; } 
+	    else if (value >= 39.45 / coef && value < 64.45 / coef) { element.className = 'medium'; } 
+	    else if (value >= 64.45 / coef && value < 84.45 / coef) { element.className = 'hm'; }
+	    else { element.className = 'high'; }
+    }
+  function markColorClass(element, value) {
+	    if (value == 0 || value == '') { element.className = 'io'; } 
+        else if (value == 2) { element.className = 'low'; } 
+        else if (value == 3) { element.className = 'medium';} 
+        else if (value == 4) { element.className = 'hm'; } 
+        else { element.className = 'high'; }
+    }
+
+    // Применяем стили на основе значений
+    var coef = sochPercent == 0 ? 2 : 4;
+    applyColorClass(document.getElementById('FO'), FO, coef);
+    applyColorClass(document.getElementById('SO'), SO, coef);
+    applyColorClass(document.getElementById('sochPercent'), sochPercent, 2);
+    applyColorClass(document.getElementById('summary'), summary, 1);
+    markColorClass(document.getElementById('mark'), mark);
+}
+    ///////////////////////////////////////  
+    function inputActivator() {
+        var SO1 = document.getElementById("max-sor-1");
+        var SO2 = document.getElementById("max-sor-2");
+        var SO3 = document.getElementById("max-sor-3");
+        var SO4 = document.getElementById("max-sor-4");
+        var SOCH = document.getElementById("max-soch");
+        
+        if (checkFoInputs()){SO1.removeAttribute("disabled")} else {SO1.value = "";SO1.setAttribute('disabled', '');}
+        if (SO1.value != ""){SO2.removeAttribute("disabled")} else {SO2.value = "";SO2.setAttribute('disabled', '');}
+        if (SO2.value != ""){SO3.removeAttribute("disabled")} else {SO3.value = "";SO3.setAttribute('disabled', '');}
+        if (SO3.value != ""){SO4.removeAttribute("disabled")} else {SO4.value = "";SO4.setAttribute('disabled', '');}
+        if (SO1.value != ""){SOCH.removeAttribute("disabled")} else {SOCH.value = "";SOCH.setAttribute('disabled', '');}
+    }
+      
+    function ResultUpdate(){
+        
+        function calcMark(num){
+            mark = 0;
+            if (num > 0 && num < 39.5){mark=2;}
+            else if (num > 39.49 && num < 64.5){mark=3;}
+            else if (num > 64.49 && num < 84.5){mark=4;}
+            else if (num > 84.49 && num <= 100){mark=5;}
+            return mark;
+        }
+
+        ///////////////////////////////
+        function polugodie(sumOfMarks, sumOfSO, quantityOfMarks, SumOfMaxSO, perc) {
+            var otv = Number(((sumOfMarks + sumOfSO) / (SumOfMaxSO + quantityOfMarks * 10)) * perc);
+	    var res = (otv).toFixed(2);
+            return res=="NaN"?0:res;
+            }
+        
+        ///////////////////////////////
+        function isNumber(char) {
+            if ( char >= "1" && char <= "9" ) { return true; alert("Yesp");}
+            else{return false; alert("Nope");}
+            }
+        
+        ///////////////////////////////
+        function rewrite(id) {
+            var temp = document.getElementById(id);
+            temp.innerHTML = "1";
+            return false;
+        }
+        
+        ///////////////////////////////
+        function chetvertnoy(sumOfMarks, sumOfSO, quantityOfMarks, SumOfMaxSO) {
+            var otv = Number(((sumOfMarks + sumOfSO) / (SumOfMaxSO + quantityOfMarks * 10)) * 50);
+	    var res = (otv).toFixed(2);
+            return res=="NaN"?0:res;
+            }
+        
+        ///////////////////////////////
+        function SumOfMarks(){
+            var mark_summary = 0;
+            var mark_quantity = 0;
+
+            for (let index = 1; index <= 10; index++) {
+                var Value = document.getElementById(index).value;
+
+                
+                    mark_summary += Number(document.getElementById(index.toString()).value) * index;
+                    mark_quantity += Number(document.getElementById(index.toString()).value) * 10;
+
+            };
+            return [mark_summary, mark_quantity]
+        }
+
+        /////////////////////////////////////////
+        function SumOfSO(){
+            var sor_summary = 0;
+            var sor_max_summary = 0;
+
+            for (let index = 1; index <= 4; index++) {
+                var maxSOelem = document.getElementById("max-sor-{index}".replace("{index}", index));
+                var SOelem = document.getElementById('sor-{index}-val'.replace('{index}', index));
+                if (["", "-", "+", "0"].includes(maxSOelem.value)){maxSOelem.value = "";SOelem.value = ""; SOelem.setAttribute('disabled', '');}
+                else if (maxSOelem.value == ""){SOelem.value = ""; SOelem.setAttribute('disabled', '');}
+                else if (maxSOelem.value != ""){SOelem.removeAttribute('disabled');}
+                if (Number(SOelem.value) > Number(maxSOelem.value)){SOelem.value = maxSOelem.value;}
+                sor_summary += Number(SOelem.value);
+                sor_max_summary += Number(maxSOelem.value);
+            };
+            return [sor_summary, sor_max_summary];
+        }
+        
+        /////////////////////////////////////////
+        var FO = document.getElementById("FO");
+        var SO = document.getElementById("SO");
+        var sochPercent = document.getElementById("sochPercent");
+        var summary = document.getElementById("summary");
+        var mark = document.getElementById("mark");
+
+        var maxSoch = document.getElementById("max-soch");
+        
+
+        if (["", "-", "+", "0"].includes(maxSoch.value)){
+            maxSoch.value = "";            
+            var FOperc = Number(SumOfMarks()[0] / SumOfMarks()[1] * 50).toFixed(2);
+            var SOperc = Number(SumOfSO()[0] / SumOfSO()[1] * 50).toFixed(2);
+            var final = Number(SOperc) + Number(FOperc);
+            document.getElementById('soch-val').value = "";
+            document.getElementById('soch-val').setAttribute('disabled', '');
+            FO.innerHTML = FOperc;
+            SO.innerHTML = SOperc;
+            sochPercent.innerHTML = "0";
+            summary.innerHTML = final;
+            mark.innerHTML = calcMark(final);
+            
+        }
+        
+      
+        else if (maxSoch.value != ""){
+            var SOCHvalueElem = document.getElementById('soch-val');
+            if (SOCHvalueElem.value > Number(maxSoch.value)){SOCHvalueElem.value = "";}
+            var res = polugodie(SumOfMarks()[0], SumOfSO()[0], SumOfMarks()[1], SumOfSO()[1], 50);
+            var sochPercentValue = (Number(document.getElementById("soch-val").value / Number(document.getElementById("max-soch").value)) * 50).toFixed(2);
+            var markValue = Number(FO.textContent) + Number(SO.textContent) + Number(sochPercentValue);
+            SOCHvalueElem.removeAttribute("disabled");
+            
+            FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(2);
+            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(2);
+            sochPercent.innerHTML = sochPercentValue;
+            summary.innerHTML = markValue.toFixed(2);
+            mark.innerHTML = calcMark(markValue);            
+        
+        }
+            
+    }
+      window.onload = function() {  
+      //  inputActivator();; 
+     
+      }
+
+  </script>
+    <div id="disqus_thread" style="padding: 5% 5% 5% 5%; width: 90%"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-finalmarkcalculator-ierzhanbazargha-repl-co.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//https-finalmarkcalculator-ierzhanbazargha-repl-co.disqus.com/count.js" async></script>
+
+    <script src="https://apis.google.com/js/plusone.js">
+</script>
+<div class="g-comments"
+    data-href = window.location
+    data-width = "650"
+    data-first_party_property = "BLOGGER"
+    data-view_type = "FILTERED_POSTMOD">
+</div>
+
+<input class="open" id="top-box" type="checkbox" hidden>
+	<label class="btn" for="top-box"></label>
+		<div class="top-panel" align=center>
+   			<div class="message">
+       				<button onclick="changeLanguage('kk')">ҚАЗАҚША</button>
+           			<button onclick="changeLanguage('ru')">РУССКИЙ</button>
+  			</div>
+		</div>
+ <script src="script.js"></script>   
+<script>
+    function langUpdate(){
+        var lang = document.getElementsByTagName('html')[0].getAttribute('lang');
+          fetch('translations/' + lang + '.json')
+              .then(response => response.json())
+              .then(data => {
+                  document.querySelectorAll('[data-translate]').forEach(element => {
+                      var key = element.getAttribute('data-translate');
+                      if (data[key]) {
+                          element.textContent = data[key];
+                      }
+                  });
+              })
+              .catch(error => {
+                  console.error('Error loading translations:', error);
+              });
+    }
+    function changeLanguage(lang){
+        var langAtrr = document.getElementsByTagName('html')[0];
+        langAtrr.setAttribute('lang',lang);
+        localStorage.setItem('lang', lang);
+        langUpdate();
+    }
+
+</script>
+	
+</body>
+</html>
