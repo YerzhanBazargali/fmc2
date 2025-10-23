@@ -394,39 +394,46 @@
         var mark = document.getElementById("mark");
 
         var maxSoch = document.getElementById("max-soch");
+		var SOCHvalueElem = document.getElementById('soch-val');
+
+        var marks = SumOfMarks();
+        var SOs = SumOfSO(); 
         
 
         if (["", "-", "+", "0"].includes(maxSoch.value)){
-            maxSoch.value = "";            
-            var FOperc = Number(SumOfMarks()[0] / SumOfMarks()[1] * 50).toFixed(1);
-            var SOperc = Number(SumOfSO()[0] / SumOfSO()[1] * 50).toFixed(1);
-            
-            document.getElementById('soch-val').value = "";
+            maxSoch.value = "";
+			document.getElementById('soch-val').value = "";
             document.getElementById('soch-val').setAttribute('disabled', '');
-            FO.innerHTML = FOperc;
+			
+            var FOperc = marks[1] ? Number(marks[0] / marks[1] * 50) : 0;
+            var SOperc = SOs[1] ? Number(SOs[0]) / Number(SOs[1])* 50 : 0;
+            
+            
+            FO.innerHTML = FOperc.toFixed(1);
             SO.innerHTML = SOperc;
 
-			var final = Number(FO.textContent) + Number(SO.textContent);
+			var markValue = Number(FO.textContent) + Number(SO.textContent);
             sochPercent.innerHTML = "0";
-            summary.innerHTML = final.toFixed(0);
-            mark.innerHTML = calcMark(final);
+            summary.innerHTML = markValue.toFixed(0);
+            mark.innerHTML = calcMark(markValue);
             
         }
         
       
         else if (maxSoch.value != ""){
-            var SOCHvalueElem = document.getElementById('soch-val');
+            SOCHvalueElem.removeAttribute("disabled");
             if (SOCHvalueElem.value > Number(maxSoch.value)){SOCHvalueElem.value = "";}
-            var res = polugodie(SumOfMarks()[0], SumOfSO()[0], SumOfMarks()[1], SumOfSO()[1], 50);
+
+			var FOperc = marks[1] ? Number(marks[0] / marks[1] * 25) : 0;
+            var SOperc = SOs[1] ? Number(SOs[0]) / Number(SOs[1])* 25 : 0;
+
+            FO.innerHTML = FOperc.toFixed(1) ;
+            SO.innerHTML = SOperc.toFixed(1);
 			
             var sochPercentValue = (Number(document.getElementById("soch-val").value / Number(document.getElementById("max-soch").value)) * 50).toFixed(2);
-			FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(1);
-            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(1);
+			sochPercent.innerHTML = sochPercentValue;
+			
             var markValue = Number(FO.textContent) + Number(SO.textContent) + Number(sochPercentValue);
-            SOCHvalueElem.removeAttribute("disabled");
-            
-            
-            sochPercent.innerHTML = sochPercentValue;
             summary.innerHTML = markValue.toFixed(0);
             mark.innerHTML = calcMark(markValue);            
         
