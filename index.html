@@ -398,15 +398,17 @@
 
         if (["", "-", "+", "0"].includes(maxSoch.value)){
             maxSoch.value = "";            
-            var FOperc = Number(SumOfMarks()[0] / SumOfMarks()[1] * 50).toFixed(2);
-            var SOperc = Number(SumOfSO()[0] / SumOfSO()[1] * 50).toFixed(2);
-            var final = Number(SOperc) + Number(FOperc);
+            var FOperc = Number(SumOfMarks()[0] / SumOfMarks()[1] * 50).toFixed(1);
+            var SOperc = Number(SumOfSO()[0] / SumOfSO()[1] * 50).toFixed(1);
+            
             document.getElementById('soch-val').value = "";
             document.getElementById('soch-val').setAttribute('disabled', '');
             FO.innerHTML = FOperc;
             SO.innerHTML = SOperc;
+
+			var final = Number(FO.textContent) + Number(SO.textContent);
             sochPercent.innerHTML = "0";
-            summary.innerHTML = final;
+            summary.innerHTML = final.toFixed(0);
             mark.innerHTML = calcMark(final);
             
         }
@@ -418,14 +420,14 @@
             var res = polugodie(SumOfMarks()[0], SumOfSO()[0], SumOfMarks()[1], SumOfSO()[1], 50);
 			
             var sochPercentValue = (Number(document.getElementById("soch-val").value / Number(document.getElementById("max-soch").value)) * 50).toFixed(2);
-			FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(2);
-            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(2);
+			FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(1);
+            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(1);
             var markValue = Number(FO.textContent) + Number(SO.textContent) + Number(sochPercentValue);
             SOCHvalueElem.removeAttribute("disabled");
             
             
             sochPercent.innerHTML = sochPercentValue;
-            summary.innerHTML = markValue.toFixed(2);
+            summary.innerHTML = markValue.toFixed(0);
             mark.innerHTML = calcMark(markValue);            
         
         }
