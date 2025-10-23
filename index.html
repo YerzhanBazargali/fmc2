@@ -416,12 +416,14 @@
             var SOCHvalueElem = document.getElementById('soch-val');
             if (SOCHvalueElem.value > Number(maxSoch.value)){SOCHvalueElem.value = "";}
             var res = polugodie(SumOfMarks()[0], SumOfSO()[0], SumOfMarks()[1], SumOfSO()[1], 50);
+			
             var sochPercentValue = (Number(document.getElementById("soch-val").value / Number(document.getElementById("max-soch").value)) * 50).toFixed(2);
+			FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(2);
+            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(2);
             var markValue = Number(FO.textContent) + Number(SO.textContent) + Number(sochPercentValue);
             SOCHvalueElem.removeAttribute("disabled");
             
-            FO.innerHTML = Number(SumOfMarks()[0] / SumOfMarks()[1] * 25).toFixed(2);
-            SO.innerHTML = Number(SumOfSO()[0] / SumOfSO()[1] * 25).toFixed(2);
+            
             sochPercent.innerHTML = sochPercentValue;
             summary.innerHTML = markValue.toFixed(2);
             mark.innerHTML = calcMark(markValue);            
